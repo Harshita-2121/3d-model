@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: jean-marais-face
+    runtime: static
+    buildCommand: echo "Publishing static GLB asset"
+    staticPublishPath: public
+    headers:
+      - path: /face.glb
+        name: Access-Control-Allow-Origin
+        value: "*"
+      - path: /face.glb
+        name: Content-Type
+        value: model/gltf-binary
+      - path: /face.glb
+        name: Cache-Control
+        value: public, max-age=3600
